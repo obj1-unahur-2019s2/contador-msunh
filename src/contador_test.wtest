@@ -1,0 +1,22 @@
+import contador.*
+test "contador test" {
+
+
+	contador.valorActual(10)
+    assert.equals("actualizacion",contador.ultimoComando())
+	contador.inc()
+	contador.inc()
+	assert.equals("incremento", contador.ultimoComando())
+
+	contador.dec()
+	assert.equals("decremento", contador.ultimoComando())
+
+	contador.inc()
+	assert.equals(12, contador.valorActual())
+
+	contador.reset()
+	assert.equals("reset", contador.ultimoComando())
+	
+	assert.equals(0, contador.valorActual())
+
+}
